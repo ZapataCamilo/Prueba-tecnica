@@ -17,42 +17,41 @@
                   </select>
                 <input type="button" name="" value="Agregar" class="btn btn-secondary">
                 <table class="table table-striped" id="table">
-                    <tr>
+                    <tr id="ch">
                         <th>#</th>
                         <th>Objeto</th>
                         <th>Categoria</th>
                     </tr>
-                    <tr>
+                    <tr id="ch">
                         <td>1</td>
                         <td>Whastapp</td>
                         <td>Mesajeria</td>
-                        <td><button>Delete</button></td>
+                        <td><button id="bt">Delete</button></td>
                     </tr>
-                    <tr>
+                    <tr id="ch">
                         <td>2</td>
                         <td>Faceboock</td>
                         <td>Redes sociales</td>
-                        <td><button>Delete</button></td>
+                        <td><button id="bt">Delete</button></td>
                     </tr>
-                    <tr>
+                    <tr id="cg">
                         <td>3</td>
                         <td>Instagram</td>
                         <td>Redes sociales</td>
-                        <td><button>Delete</button></td>
+                        <td><button id="bt">Delete</button></td>
                     </tr>
-                    <tr>
+                    <tr id="ch">
                         <td>4</td>
                         <td>Netflix</td>
                         <td>Entrenimiento</td>
-                        <td><button>Delete</button></td>
+                        <td><button id="bt">Delete</button></td>
                     </tr>
-                    <tr>
+                    <tr id="ch">
                             <td>5</td>
                             <td>Hbo max</td>
                             <td>Entrenimiento</td>
-                            <td><button>Delete</button></td>
+                            <td><button id="bt">Delete</button></td>
                     </tr>
-    
                 </table>
             </form>
         </div>
@@ -61,11 +60,24 @@
 <script>
     const form = document.getElementById("id", function(event) {
         event.preventDefault();
+
         let formData = new FormData(form);
         let addtable = document.getElementById("table");
         let newRow = addtable.insertRow(-1);
+
         let newCell = newRow.insertCell(0);
         newCell.textContent = formData.get("app");
+
+        newCell = newRow.insertCell(1);
+        newCell.textContent = formData.get("categorias");
+    })
+    const boton = document.getElementById("bt");
+
+    boton.addEventListener('click', function () {
+        alert('¡El botón ha sido clicado!');
+        let parent = document.getElementById("id");
+        let ch = document.getElementById("ch");
+        let delch = parent.removeChild(ch);
     })
 </script>
 </html>
